@@ -1,0 +1,51 @@
+// Global annotations
+////
+/// @group structure
+/// @access private
+////
+
+$button-group-divider-color-primary: $color-neutral-white !default;
+$button-group-divider-color-secondary: $color-primary !default;
+$button-group-divider-color-secondary-hover: $color-primary-darker !default;
+
+@import "~bootstrap/scss/button-group";
+
+.btn-group {
+  > .btn:not(:first-child),
+  > .btn-group:not(:first-child) > .btn,
+  > .btn-group:not(:first-child) > div > .btn {
+    &:before {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: -1px;
+      width: 1px;
+      margin-top: -($border-width);
+      margin-bottom: -($border-width);
+      background: $button-group-divider-color-primary;
+      content: "";
+    }
+  }
+}
+
+.btn-group-toggle {
+  display: inline-flex;
+
+  > .btn {
+    &:first-child {
+      @include border-left-radius($btn-border-radius);
+    }
+
+    &:not(:first-child) {
+      border-left: unset;
+    }
+
+    &:last-child {
+      @include border-right-radius($btn-border-radius);
+    }
+
+    &:not(:focus) {
+      box-shadow: none;
+    }
+  }
+}

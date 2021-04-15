@@ -1,0 +1,79 @@
+<div class="chat-win">
+<mat-card class="chat-window">
+  <ng-container  [ngTemplateOutlet]="template">
+    <div class="header"><img class="bot_icon"><span class="header-content">X Bot</span></div>
+    <div class="msgArea" #msgArea>
+      <ng-container *ngFor="let msg of allMessages | async; let i = index;"
+        [ngTemplateOutlet]="defaultMsgTemplate"
+        [ngTemplateOutletContext]="{
+                                       text: msg.content ,
+                                       sendBy: msg.sendBy,
+                                       loginRequired:msg.loginRequired
+                                    }"
+      >
+
+      </ng-container>
+      <div class="quickRepliescontainer">
+        <ng-container *ngIf="QuickReplies.quickReplies">
+          <div *ngFor="let button of QuickReplies.quickReplies">
+          <button class="quickreplybutton" (click)="quickRepliesbuttonClick(button.text)">
+            {{button.text}}
+          </button>
+         </div>      
+        </ng-container>
+        <ng-container *ngIf="QuickReplies.cxResult && QuickReplies.cxResult['summary-type'] && QuickReplies.cxResult['summary-type'] !== null && QuickReplies.cxResult['summary-type'].accounts">
+            <button class="quickreplybutton cxsDatabutton">
+                <table *ngFor="let button of QuickReplies.cxResult['summary-type'].accounts">  
+                  <tr class="account-row">
+                  <td class="account-detail">{{button.accountnumber}}</td>
+                  <td class="account-detail"><strong>{{button.balance}}</strong></td>
+                  <td>
+                    <div *ngIf="button.action == 'add money'" class="account-action-btn addMoney-btn">Add Money</div>
+                    <div *ngIf="button.action == 'pay bill'" class="account-action-btn payBill-btn">Pay Bill</div>
+                  </td>
+                </tr>
+                </table>
+              </button>      
+        </ng-container>
+        <ng-container *ngIf="QuickReplies.cxResult && QuickReplies.cxResult['summary-type'] &&  QuickReplies.cxResult['summary-type'] !== null && QuickReplies.cxResult['summary-type'].creditcards">
+              <div class="creditCard" *ngFor="let button of QuickReplies.cxResult['summary-type'].creditcards">
+                <div class="creditCard-name" title="Xebank">{{button.cardholder | uppercase}}</div>
+                <i *ngIf="button.cardtype == 'visa'" class="visa_icon card-icon"></i>
+                <i *ngIf="button.cardtype == 'mastercard'" class="mastercard_icon card-icon"></i>
+                <i *ngIf="button.cardtype == 'maestro'" class="maestro_icon card-icon"></i>
+                <div class="card-data">
+                    <div class="pan" title="4123 4567 8910 1112">{{button.cardnumber}}</div>
+                    <div class="card-balance">Balance Due: {{button.balance}}</div>
+                    <div class="card-dueDate">Validity: {{button.validupto}}</div>
+                </div>
+            </div>     
+      </ng-container>
+      </div>
+      <!-- <div class="quickRepliescontainer">
+        <ng-container *ngFor="let tableData of cxResult">
+          <button class="quickreplybutton cxsDatabutton">
+          <h6>
+            <label for="">{{tableData.accountType }}</label>
+          </h6>
+            <table *ngFor="let productData of tableData.values">  
+              <td class="account-detail">{{productData.name}} </td>
+              <td>${{productData.availableBalance}} </td>
+            </table>
+          </button>
+        </ng-container>
+      </div> -->
+
+    </div>
+    <div class="input-area">
+      <ng-container class="input-area" [ngTemplateOutlet]="inputTemplate"></ng-container>
+    </div>
+  </ng-container>
+</mat-card>
+
+<ng-template  #defaultMsgTemplate let-text="text" let-object="object" let-sendBy="sendBy" let-loginRequired="loginRequired">
+  <chat-msg class="chat-msg-container" [msg]="{text:text, sendBy:sendBy, loginRequired:loginRequired}" ></chat-msg>
+</ng-template>
+<ng-template #defaultInputTemplate>
+  <chat-input (change)="onChange($event.target);"></chat-input>
+</ng-template>
+</div>

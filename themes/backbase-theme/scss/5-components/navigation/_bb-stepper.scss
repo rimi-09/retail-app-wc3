@@ -1,0 +1,90 @@
+// Global annotations
+////
+/// @group navigation
+/// @access private
+////
+
+$stepper-separator-height: 1px !default;
+$stepper-separator-background-color: $color-neutral-grey !default;
+
+$step-icon-size: $sizer-lg !default;
+$step-icon-line-height: 1 !default;
+$step-icon-color: $color-neutral-black !default;
+$step-icon-background-color: $color-neutral-grey !default;
+$step-icon-font-weight: $font-weight-semi-bold !default;
+$step-icon-font-size: $font-size-subtitle !default;
+$step-icon-active-color: $color-neutral-white !default;
+$step-icon-active-background-color: $color-primary !default;
+
+$step-label-color: $color-neutral-dark !default;
+$step-label-font-weight: $font-weight-regular !default;
+$step-label-font-size: $font-size-subtitle !default;
+$step-label-active-color: $color-neutral-black !default;
+$step-label-active-font-weight: $font-weight-semi-bold !default;
+//stepper
+
+.bb-stepper {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  padding: $sizer-md;
+}
+
+.bb-stepper__separator {
+  flex-grow: 1;
+  max-width: 100%;
+  height: $stepper-separator-height;
+  margin: $spacer-sm;
+  padding: 0;
+  background-color: $stepper-separator-background-color;
+}
+
+//step
+
+.bb-step {
+  display: flex;
+  align-items: center;
+}
+
+.bb-step--active {
+  .bb-step__icon {
+    color: $step-icon-active-color;
+    background-color: $step-icon-active-background-color;
+  }
+  .bb-step__label {
+    color: $step-label-active-color;
+    font-weight: $step-label-active-font-weight;
+  }
+}
+
+.bb-step__icon {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: $step-icon-size;
+  height: $step-icon-size;
+  color: $step-icon-color;
+  font-weight: $step-icon-font-weight;
+  font-size: $step-icon-font-size;
+  line-height: $step-icon-line-height;
+  background-color: $step-icon-background-color;
+  border-radius: $border-radius-circle;
+}
+
+.bb-step__label {
+  margin-left: $spacer-sm;
+  color: $step-label-color;
+  font-weight: $step-label-font-weight;
+  font-size: $step-label-font-size;
+
+  @include media-breakpoint-down(xs) {
+    @include text-truncate();
+
+    position: absolute;
+    top: -100%;
+    left: 0;
+    display: none;
+  }
+}

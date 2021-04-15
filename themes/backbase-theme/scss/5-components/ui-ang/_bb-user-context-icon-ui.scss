@@ -1,0 +1,36 @@
+// Global annotations
+////
+/// @group ui-components
+/// @access private
+////
+
+.bb-user-context-icon-ui {
+  width: 4rem;
+  height: 3rem;
+  padding-right: 1rem;
+  background-image: url(#{$path-bb-images}/bb-service-agreement-ui/service-agreement-icon-lg.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @include media-breakpoint-down(sm) {
+    width: 3rem;
+    height: 2.25rem;
+    padding-right: 0.75rem;
+    background-image: url(#{$path-bb-images}/bb-service-agreement-ui/service-agreement-icon-sm.svg);
+
+    .bicon {
+      font-size: $font-icon-size;
+    }
+  }
+}
+
+.bb-user-context-icon-text {
+  font-weight: $font-weight-semi-bold;
+  font-size: $font-size-lg;
+  line-height: $line-height-base;
+  letter-spacing: 0;
+
+  @include media-breakpoint-down(sm) {
+    font-size: $font-size-base;
+  }
+}

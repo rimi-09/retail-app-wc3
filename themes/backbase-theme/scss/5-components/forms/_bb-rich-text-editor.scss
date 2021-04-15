@@ -1,0 +1,59 @@
+// Global annotations
+////
+/// @group forms
+/// @access private
+////
+
+$bb-rich-text-editor-content-height: 100px !default;
+$bb-rich-text-editor-content-placeholder-color: $input-placeholder-color !default;
+$bb-rich-text-editor-content-invalid-border: $input-invalid-border !default;
+$bb-rich-text-editor-content-focus-border-color: $input-focus-border-color !default;
+$bb-rich-text-editor-content-btn-focus-box-shadow: $input-btn-focus-box-shadow !default;
+$bb-rich-text-editor-char-counter-color: $color-neutral-dark !default;
+$bb-rich-text-editor-char-counter-margin-top: $spacer-sm !default;
+$bb-rich-text-editor-toolbar-separator-width: $spacer-lg !default;
+
+.bb-rich-text-editor__actionbar {
+  &.ng-invalid.ng-touched:not(.is-focused) .form-control {
+    border: $bb-rich-text-editor-content-invalid-border;
+  }
+
+  &.is-focused {
+    .form-control {
+      border-color: $bb-rich-text-editor-content-focus-border-color;
+      box-shadow: $input-btn-focus-box-shadow;
+    }
+  }
+}
+
+.bb-rich-text-editor__char-counter {
+  margin-top: $bb-rich-text-editor-char-counter-margin-top;
+  color: $bb-rich-text-editor-char-counter-color;
+}
+
+.bb-rich-text-editor__actionbar {
+  // Unset `height` for `.form-control`
+  height: auto;
+}
+
+.bb-rich-text-editor__content {
+  height: $bb-rich-text-editor-content-height;
+  overflow-y: auto;
+  outline: 0;
+
+  //Placeholder
+  &:empty:not(:focus)::before {
+    display: block; /* For Firefox */
+    color: $bb-rich-text-editor-content-placeholder-color;
+    content: attr(placeholder);
+  }
+}
+
+.bb-rich-text-editor__textarea--hidden {
+  display: none;
+}
+
+.bb-rich-text-editor__toolbar-separator {
+  display: inline-block;
+  width: $bb-rich-text-editor-toolbar-separator-width;
+}

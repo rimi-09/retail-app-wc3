@@ -1,0 +1,20 @@
+// Global annotations
+////
+/// @group buttons
+/// @access private
+////
+
+/// Class to hide button text in xs screens. Useful in button with icons.
+///
+/// @example html
+/// <button class="btn btn-primary bb-button--xs-hide-text">
+///  <i class="bb-icon bb-icon-settings"></i>
+///  <span>Primary</span>
+/// </button>
+@include media-breakpoint-down(xs) {
+  .bb-button--xs-hide-text {
+    span {
+      display: none;
+    }
+  }
+}

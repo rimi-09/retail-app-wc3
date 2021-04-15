@@ -1,0 +1,52 @@
+// Global annotations
+////
+/// @group structure
+/// @access private
+////
+
+$state-container-padding-y: $sizer-xxl !default;
+$state-container-min-height: 30 * $sizer !default;
+
+/// Positions a state component (like empty or loading state).
+///
+/// @name bb-state-container
+///
+/// @example html - default
+///   <div class="bb-state-container">
+///     Loading...
+///   </div>
+///
+/// @example html - with footer
+///   <div class="bb-state-container">
+///     Empty state
+///     <div class="bb-state-container__footer">
+///       Optional actions
+///     </div>
+///   </div>
+///
+/// @example html - min height container
+///   <div class="card"> // any flex column-direction container (IE11 only)
+///     <div class="bb-state-container bb-state-container--min-height">
+///       Empty state / Loading state
+///     </div>
+///   </div
+.bb-state-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $state-container-padding-y 0;
+}
+
+/* Use this modification as a child of flex column direction container (IE11 only) */
+.bb-state-container--min-height {
+  justify-content: center;
+  min-height: $state-container-min-height;
+
+  @include media-breakpoint-down(md) {
+    min-height: auto;
+  }
+}
+
+.bb-state-container__footer {
+  margin-top: $spacer-lg;
+}

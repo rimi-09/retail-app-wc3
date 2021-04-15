@@ -1,0 +1,55 @@
+// Global annotations
+////
+/// @group structure
+/// @access private
+////
+
+$container-padding-x-lg: $page-layout-section-padding !default;
+$container-padding-y-lg: 0 !default;
+$container-padding-x-md: $page-layout-section-padding-narrow !default;
+$container-padding-x-sm: $sizer-sm !default;
+$container-padding-y-md: 0 !default;
+$container-fixed-width-max-width: 840px !default;
+$container-fixed-width-small-max-width: 600px !default;
+
+// Overriding Bootstrap class
+.container {
+  display: block;
+  padding: $container-padding-y-lg $container-padding-x-lg;
+
+  @include media-breakpoint-down(md) {
+    padding: $container-padding-y-md $container-padding-x-md;
+  }
+
+  @include media-breakpoint-down(sm) {
+    padding: 0;
+  }
+}
+
+// Overriding Bootstrap class
+.container-fluid {
+  display: block;
+  padding: $container-padding-y-lg $container-padding-x-lg;
+
+  @include media-breakpoint-down(sm) {
+    padding: $container-padding-y-md $container-padding-x-sm;
+  }
+}
+
+// Custom variants
+.container--fixed-width {
+  max-width: $container-fixed-width-max-width;
+}
+
+.container--fixed-width-small {
+  max-width: $container-fixed-width-small-max-width;
+}
+
+// To be used in conjunction with .bb-heading-widget--de-elevated
+.container--drag-up {
+  margin-top: calc(#{$spacer-lg} - #{$heading-widget-de-elevated-padding-bottom});
+
+  @include media-breakpoint-down(sm) {
+    padding: 0;
+  }
+}

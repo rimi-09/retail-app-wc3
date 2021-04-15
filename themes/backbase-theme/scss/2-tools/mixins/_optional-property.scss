@@ -1,0 +1,11 @@
+////
+/// Utility variables (should only be used internally) (global)
+/// @group mixins
+/// @access private
+////
+
+@mixin setOptional($property, $variable) {
+  @if $variable {
+    #{$property}: $variable;
+  }
+}

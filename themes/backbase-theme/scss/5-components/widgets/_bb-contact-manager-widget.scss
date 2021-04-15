@@ -1,0 +1,13 @@
+// Global annotations
+////
+/// @group widgets
+/// @access private
+////
+
+$contact-search-width: 20rem !default;
+
+@include media-breakpoint-up(md) {
+  .contact-search-container {
+    width: $contact-search-width;
+  }
+}

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<catalog>
+  <container>
+    <name>xe-retail-app-ang</name>
+    <properties>
+      <property name="label">
+        <value>Xebia Retail Banking App Container</value>
+      </property>
+      <property name="title" label="Title" readonly="true" viewHint="admin,designModeOnly">
+        <value type="string">Xebia Retail Banking App Container</value>
+      </property>
+    </properties>
+  </container>
+</catalog>

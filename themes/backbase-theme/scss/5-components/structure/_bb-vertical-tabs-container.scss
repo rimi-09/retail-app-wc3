@@ -1,0 +1,39 @@
+// Global annotations
+////
+/// @group structure
+/// @access private
+////
+
+/// @name bb-vertical-tabs-container
+///
+/// @example html
+/// <div class="bb-vertical-tabs-container">
+///   <div class="bb-vertical-tabs-container__sidebar">
+///      Main Sidebar Example
+///      <div class="bb-vertical-tabs-container__button">Button example.</div>
+///   </div>
+///   <div class="bb-vertical-tabs-container__main">
+///       Main View Example
+///   </div>
+/// </div>
+
+.bb-vertical-tabs-container {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.bb-vertical-tabs-container__sidebar {
+  width: 25%;
+}
+
+.bb-vertical-tabs-container__main {
+  width: 75%;
+  padding-top: $sizer-xl;
+  padding-left: $sizer-xl;
+  border-left: 1px solid $hr-border-color;
+}
+
+.bb-vertical-tabs-container__button {
+  padding: $sizer-xl;
+}

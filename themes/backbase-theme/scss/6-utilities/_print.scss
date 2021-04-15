@@ -1,0 +1,27 @@
+// Global annotations
+////
+/// @group elements
+/// @access private
+////
+
+@import "~bootstrap/scss/print";
+
+@if $enable-print-styles {
+  @media print {
+    .bb-sidebar {
+      display: none;
+    }
+    // Active nav item has background color instead of border bottom.
+    // In print mode, background is transparent by default from bootstrap.
+    // In order to show active item, we need to use border bottom.
+    .nav-tabs .nav-link.active {
+      border: solid transparent;
+      border-color: $nav-tabs-link-active-border-color;
+      border-width: 0 0 ($border-width * 3) 0;
+    }
+
+    .bb-page-layout__main {
+      min-height: 0;
+    }
+  }
+}

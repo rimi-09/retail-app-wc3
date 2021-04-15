@@ -1,0 +1,10 @@
+// Global annotations
+////
+/// @group structure
+/// @access private
+////
+
+@import "~bootstrap/scss/forms";
+
+@include form-validation-state-nested-override("valid", $form-feedback-valid-color);
+@include form-validation-state-nested-override("invalid", $form-feedback-invalid-color);

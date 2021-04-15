@@ -1,0 +1,63 @@
+// Global annotations
+////
+/// @group structure
+/// @access private
+////
+
+/// Space content vertically using a bottom margin.
+///
+/// @name bb-block
+///
+/// @example html
+///   <div class="bb-block bb-block--no-margin">Content with no margin bottom</div>
+///   <div class="bb-block bb-block--xs">Content with xs margin bottom</div>
+///   <div class="bb-block bb-block--sm">Content with sm margin bottom</div>
+///   <div class="bb-block bb-block--md">Content with md margin bottom</div>
+///   <div class="bb-block bb-block--lg">Content with lg margin bottom</div>
+///   <div class="bb-block bb-block--xl">Content with xl margin bottom</div>
+///
+/// @example html - fill entire width
+///   <div class="bb-block bb-block--full-width bg-secondary">Content with 100% width</div>
+.bb-block {
+}
+
+.bb-block--no-margin {
+  margin-bottom: 0;
+}
+
+.bb-block--xs {
+  margin-bottom: $spacer-xs;
+}
+
+.bb-block--sm {
+  margin-bottom: $spacer-sm;
+}
+
+.bb-block--md {
+  margin-bottom: $spacer-md;
+}
+
+.bb-block--lg {
+  margin-bottom: $spacer-lg;
+}
+
+.bb-block--xl {
+  margin-bottom: $spacer-xl;
+}
+
+/// @name bb-block
+/// @deprecated Use .bb-block--full-width
+.bb-block--fill {
+  width: 100%;
+}
+
+.bb-block--full-width {
+  width: 100%;
+}
+
+//there is a long-term plan to replace the class names with a different concept
+.bb-block--md-md-down {
+  @include media-breakpoint-down(md) {
+    margin-bottom: $spacer-md;
+  }
+}

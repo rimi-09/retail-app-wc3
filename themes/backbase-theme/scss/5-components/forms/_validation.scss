@@ -1,0 +1,30 @@
+// Global annotations
+////
+/// @group forms
+/// @access private
+////
+
+.form-control[type="text"],
+.form-control[type="number"],
+.form-control[type="email"],
+.form-control[type="password"] {
+  &.ng-touched.ng-invalid {
+    border: $input-invalid-border;
+  }
+}
+
+bb-input-password-ui,
+bb-input-datepicker-ui,
+bb-search-box-ui {
+  &.ng-touched.ng-invalid {
+    .input-group-append,
+    .input-group-prepend {
+      .btn,
+      .btn:not(.disabled):not(:disabled):hover,
+      .btn:not(.disabled):not(:disabled):focus,
+      .btn:not(.disabled):not(:disabled).focus {
+        border-color: $input-invalid-border-color;
+      }
+    }
+  }
+}

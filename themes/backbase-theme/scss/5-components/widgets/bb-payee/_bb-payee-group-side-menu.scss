@@ -1,0 +1,61 @@
+// Global annotations
+////
+/// @group widgets
+/// @access private
+////
+
+$bb-payee-side-menu-item-border: 0px !default;
+$bb-payee-side-menu-item-clip-path: polygon(0% 0%, 97% 0%, 100% 50%, 97% 100%, 0% 100%) !default;
+$bb-payee-side-menu-item-width: 103% !default;
+$bb-payee-counter-padding-left: $sizer * 1.25 !default;
+
+/// Styles for Payee Group Side Menu
+/// This component shows Payee Group Side Menu.
+///
+/// @name bb-bb-payee-side-menu-item
+///
+/// @example html
+///<div class="bb-payee-counter">
+/// Payee(5)
+///</div>
+///<div role="list" data-role="data-group-list">
+///  <div *ngFor="let dg of hostRef.payeeGroups" role="listitem">
+///    <a
+///    [ngClass]="{'bb-payee-item-active': hostRef.selectedPayeeGroup.id === dg.id}"
+///    role="button"
+///    tabindex="0"
+///    [attr.data-role]="dg.name"
+///    class="bb-payee-side-menu-item">
+///      {{ dg.name }}
+///    </a>
+///  </div>
+
+.bb-payee-counter {
+  padding-left: $bb-payee-counter-padding-left;
+}
+
+.bb-payee-side-menu-item {
+  border: $bb-payee-side-menu-item-border;
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $color-neutral-white;
+    outline: none;
+  }
+}
+
+.bb-payee-item-active {
+  width: $bb-payee-side-menu-item-width;
+  background-color: $color-primary-lightest;
+  border: $bb-payee-side-menu-item-border;
+  clip-path: $bb-payee-side-menu-item-clip-path;
+  &:hover,
+  &:active,
+  &:focus {
+    width: $bb-payee-side-menu-item-width;
+    background-color: $color-primary-lightest;
+    border: $bb-payee-side-menu-item-border;
+    outline: none;
+    clip-path: $bb-payee-side-menu-item-clip-path;
+  }
+}

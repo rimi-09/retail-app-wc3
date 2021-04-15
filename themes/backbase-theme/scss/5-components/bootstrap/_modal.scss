@@ -1,0 +1,59 @@
+// Global annotations
+////
+/// @group structure
+/// @access private
+////
+
+@import "~bootstrap/scss/modal";
+
+$modal-content-highlight-bg-color: $color-neutral-lighter !default;
+$modal-body-padding-vertical: $sizer-md !default;
+
+.modal-title {
+  font-weight: $font-weight-semi-bold;
+  font-size: $h2-font-size;
+}
+
+// need for fully cover background on mobile resolution with wide body
+.modal-backdrop {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.modal-content--highlight {
+  margin-right: -$sizer-xl;
+  margin-left: -$sizer-xl;
+  background-color: $modal-content-highlight-bg-color;
+}
+
+.modal-header {
+  padding-bottom: 0;
+}
+
+.modal-body {
+  overflow-wrap: break-word;
+}
+
+.modal-footer {
+  padding-top: 0;
+}
+
+@include media-breakpoint-down(sm) {
+  .modal-body {
+    padding: $sizer-lg;
+  }
+}
+
+@media print {
+  .modal-open {
+    height: auto;
+    visibility: hidden;
+
+    .modal {
+      .modal-header,
+      .modal-body {
+        visibility: visible;
+      }
+    }
+  }
+}

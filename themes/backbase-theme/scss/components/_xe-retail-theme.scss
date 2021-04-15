@@ -1,0 +1,166 @@
+.bb-navigation {
+    padding-top: 10px;
+}
+.bb-sidebar {
+  //background-image: linear-gradient(163deg,#fff 7%,#eddbd5 96%);
+  background-color: #6a205f !important;
+  margin-top: -40px;
+}
+.bb-page-layout__main {
+    margin-top: -40px;
+}
+.bb-heading-widget {
+    padding: 3rem 2rem 2rem;
+    border-radius: 0;
+    //background-image: linear-gradient( 163deg,#fff 7%,#eddbd5 96%);
+    background: #f3e9f1;
+}
+.product-item-group {
+    border-radius: 0 !important;
+    background-color: white;
+}
+.bb-product-item {
+    padding: 15px;
+}
+.font-weight-bold {
+    font-weight: 500 !important;
+}
+body {
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.4;
+    background-color: #fff;
+}
+.bb-navigation-item__link {
+    color : white;
+    border-radius: 0;
+}
+.bb-navigation-item--active .bb-navigation-item__link {
+    color: white;
+    background-color: #004285;
+}
+.bb-navigation-item--active .bb-navigation-item__icon {
+    color: white;
+}
+.bb-navigation-item__link:hover {
+    color: white;
+    background-color: #00306b;
+}
+.navbar .nav li.nav-item.active {
+    border-left-color: #2b9be0;
+}
+.bb-navigation__item:not(:last-of-type) {
+    margin-bottom: 0;
+}
+.heading-wrapper {
+    background: #f1f6fb;
+}
+.bb-page-layout--vertical-nav .bb-page-layout__topbar {
+    background-color: #fff;
+}
+.bb-page-layout {
+    background-color: #fff;
+}
+.bb-page-layout--vertical-nav .bb-page-layout__topbar {
+    height: 80px;
+    box-shadow: 0px 2px 0px #00000021;
+}
+.bb-topbar__branding-area img {
+    height: 2.5rem;
+}
+.bb-heading-widget__heading {
+    font-weight: 600;
+}
+.absolute-center {
+    position: initial;
+}
+.budget-card-wrapper {
+	min-width: 0;
+    max-width: 100%;
+}
+.btn .badge {
+    top: -20px;
+    right: -15px;
+}
+.container-medium {
+    margin: 0 auto;
+    padding: 32px 16px;
+    max-width: 840px;
+}
+.bb-payment-card-component {
+    display: inline-block;
+    width: 100%;
+    min-width: 300px;
+    max-width: 320px;
+}
+.bb-payment-card-state-container {
+    position: absolute;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    z-index: 1;
+}
+.bb-icon--xxl.bb-icon__background {
+    height: 3.9375rem;
+    line-height: 3.9375rem;
+    width: 3.9375rem;
+}
+.bb-delivery-tracker-step:not(:first-of-type)>.bb-delivery-tracker-step-icon-success::before, .bb-delivery-tracker-step:not(:last-of-type)>.bb-delivery-tracker-step-icon-success::after {
+    content: '';
+    position: absolute;
+    top: 40%;
+    width: 50%;
+    border-top: .5rem solid #00884b;
+}
+.bb-icon-delivery-tracker-step-ordered:before, .bicon-delivery-tracker-step-ordered:before {
+    content: "check";
+}
+.bb-icon-delivery-tracker-step-processed:before, .bicon-delivery-tracker-step-processed:before {
+    content: "assignment";
+}
+.bb-icon-delivery-tracker-step-in-transit:before, .bicon-delivery-tracker-step-in-transit:before {
+    content: "local_shipping";
+}
+.bb-icon-delivery-tracker-step-delivered:before, .bicon-delivery-tracker-step-delivered:before {
+    content: "home";
+}
+.bb-delivery-tracker-step:not(:first-of-type)>.bb-delivery-tracker-step-icon-success::before {
+    right: 50%;
+    left: -1.3125rem;
+}
+.bb-delivery-tracker-step.active>.bb-delivery-tracker-step-icon::after, .bb-delivery-tracker-step.active~.bb-delivery-tracker-step>.bb-delivery-tracker-step-icon::after, .bb-delivery-tracker-step.active~.bb-delivery-tracker-step>.bb-delivery-tracker-step-icon::before {
+    border-color: #ccd3d8;
+}
+.bb-icon.bb-icon--xxl {
+    font-size: 2.625rem;
+}
+.bb-icon__background--greyer {
+    background-color: #ccd3d8;
+}
+.btn {
+    padding: .375rem .75rem;
+}
+.btn-secondary {
+    color: #111112;
+    background-color: #dde4e9;
+    border-color: #dde4e9;
+}
+.dropdown-toggle::after {
+    display: none;
+}
+.table {
+    font-size: .7875rem;
+    border-top: 1px solid rgba(0,0,0,.1);
+}
+.bb-notifications-list-wrapper {
+    width: 360px;
+}

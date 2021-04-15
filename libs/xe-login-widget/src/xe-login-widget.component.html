@@ -1,0 +1,55 @@
+<bb-login-widget>
+
+  <ng-template bbIamLoginCustomizable let-hostRef>
+    <!-- <div> -->
+      <div class="card-body-xe">
+        <bb-login-form (loginSuccess)="hostRef.onLoginSuccess()"></bb-login-form>
+      </div>
+    <!-- </div> -->
+  </ng-template>
+  
+<ng-template bbIamLoginFormCustomizable let-hostRef>
+  <div class="col-12 text-center">
+    <img class="xe-logo"/>
+  </div>
+  <span class="register-xe" aria-label="Register">
+    Do not have an account? <a class="link-xe">Register</a>
+  </span>
+  <div class="col-12 text-center">
+    <img class="login-banner"/>
+  </div>
+  <div [formGroup]="hostRef.loginForm">
+    <div class="form-group">
+      <i class="email_icon login-input-icon"></i>
+      <input id="username" name="username" formControlName="username" class="form-control form-control-login" type="text" autocomplete="off" aria-label="username"
+          i18n-aria-label="@@login.form.username" placeholder="Enter email ID" i18n-placeholder="@@login.form.username" />
+    </div>
+    <div class="form-group">
+      <i class="pwd_icon login-input-icon"></i>
+      <input id="password" name="password" formControlName="password" class="form-control form-control-login" type="password" autocomplete="off" aria-label="password"
+          i18n-aria-label="@@login.form.password" placeholder="Enter Password" i18n-placeholder="@@login.form.password" />
+    </div>
+    <div *ngIf="hostRef.error === hostRef.errorType.AUTH" class="form-group text-danger">
+      <span i18n="Login error|Login form. Authentication error message@@login.form.error">Credentials you have entered are invalid</span>
+    </div>
+    <div *ngIf="hostRef.error === hostRef.errorType.UNKNOWN" class="form-group text-danger">
+      <span i18n="Unknown error|Login form. Unknown error message@@login.form.error">An error has occurred while accessing the service</span>
+    </div>
+    <div class="form-group btn-group-xe">
+      <span class="btn btn-secondary-xe" (click)="navigate('pwd')" aria-label="Forgot Password">
+        Forgot Password?
+      </span>
+      <span class="btn btn-secondary-xe btn-secondary-other" (click)="navigate('other')" aria-label="Try other way">
+        Try other way
+      </span>
+    </div>
+    <div class="form-group text-right">
+      <button type="submit" [disabled]="!hostRef.loginForm.valid" class="btn btn-primary btn-primary-xe" i18n="Login button|Login form. Login button text@@login.form.submitButton" i18n-aria-label="@@login.form.submitButton" aria-label="Log in">
+        LOGIN
+      </button>
+    </div>
+  </div>
+</ng-template>
+<!-- <ng-template bbIamLoginAddtionalFieldsCustomizable let-hostRef let-loginForm="context">
+</ng-template>  -->
+</bb-login-widget>

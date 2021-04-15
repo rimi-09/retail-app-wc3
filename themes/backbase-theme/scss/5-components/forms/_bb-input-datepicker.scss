@@ -1,0 +1,66 @@
+// Global annotations
+////
+/// @group forms
+/// @access private
+////
+
+$dp-input-btn-hover-bg: $color-neutral-white !default;
+
+.bb-input-datepicker-ui {
+  input.datepicker-input-hidden,
+  label.datepicker-input-hidden {
+    width: 0;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    font-size: 0;
+    border: 0;
+    outline: 0;
+  }
+
+  label.datepicker-input-hidden {
+    position: absolute;
+    bottom: 0;
+  }
+
+  input.datepicker-input-hidden {
+    visibility: hidden;
+  }
+
+  .input-group > .form-control:not(:first-child) {
+    border-top-left-radius: $input-border-radius;
+    border-bottom-left-radius: $input-border-radius;
+  }
+}
+
+.bb-input-datepicker__wrapper {
+  position: relative;
+}
+
+.bb-input-datepicker__calendar-opener-button {
+  &.btn-link:not(:disabled):not(.disabled):hover {
+    background: $dp-input-btn-hover-bg;
+    border-color: $input-border-color;
+  }
+}
+
+.bb-input-datepicker__input {
+  &.ng-touched.ng-invalid {
+    & + ngb-datepicker,
+    & {
+      & + .input-group-append {
+        .bb-input-datepicker__calendar-opener-button {
+          border-color: $color-danger;
+        }
+      }
+    }
+  }
+}
+
+.bb-input-datepicker__input {
+  &.ng-invalid.ng-touched {
+    &:not(:disabled):not(.disabled):focus {
+      border-right: none;
+    }
+  }
+}

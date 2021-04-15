@@ -1,0 +1,62 @@
+// Global annotations
+////
+/// @group structure
+/// @access private
+////
+
+/// Vertically align and space items in an inline element, for example an icon with a label, or
+/// text with a badge.
+///
+/// Modifiers exist
+/// for controlling the spacing between items (`bb-inline-stack--density-<sm|lg|none>`);
+/// for controlling the spacing after specific items (`bb-inline-stack__item--spacing-<sm|md|lg|none>`).
+///
+/// @name bb-inline-stack
+///
+/// @example html - icon + text
+///   <span class="bb-inline-stack">
+///     <i class="bb-inline-stack__item bb-icon bb-icon-cancel"></i>
+///     <span class="bb-inline-stack__item">Closed</span>
+///   </span>
+///
+/// @example html - text + badge
+///   <span class="bb-inline-stack">
+///     <span class="bb-inline-stack__item">Tab</span>
+///     <span class="bb-inline-stack__item badge badge-counter badge-counter-danger">3</span>
+///   </span>
+///
+/// @example html - controlling the spacing between elements
+///   <span class="bb-inline-stack bb-inline-stack--density-sm">
+///     <div class="bb-inline-stack__item">Tab</div>
+///     <div class="bb-inline-stack__item badge badge-counter badge-counter-danger">3</div>
+///   </span>
+.bb-inline-stack {
+  display: inline-flex;
+  align-items: center;
+}
+
+.bb-inline-stack__item:not(:last-child) {
+  margin-right: $spacer-xs;
+}
+
+@each $sizeKey, $spacingValue in $spacing-map {
+  .bb-inline-stack--density-#{$sizeKey} {
+    .bb-inline-stack__item:not(:last-child) {
+      margin-right: $spacingValue;
+    }
+  }
+
+  .bb-inline-stack__item--spacing-#{$sizeKey} {
+    margin-right: $spacingValue;
+  }
+}
+
+.bb-inline-stack--density-none {
+  .bb-inline-stack__item {
+    margin-right: 0;
+  }
+}
+
+.bb-inline-stack__item--spacing-none {
+  margin-right: 0;
+}

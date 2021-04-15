@@ -1,0 +1,12 @@
+// Global annotations
+////
+/// General reset rules
+/// @group generic
+/// @access private
+////
+
+@import "~bootstrap/scss/reboot";
+
+input::-ms-clear {
+  display: none;
+}

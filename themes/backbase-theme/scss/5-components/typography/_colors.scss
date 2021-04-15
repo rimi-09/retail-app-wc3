@@ -1,0 +1,52 @@
+// Global annotations
+////
+/// @group typography
+/// @access private
+////
+
+$highlight-background-color: $color-warning-lightest;
+
+/// Will set color $color-text-support on text
+///
+/// @name bb-text-support
+///
+/// @example html
+///   <p class="bb-text-support">Text with support color</p>
+
+.bb-text-support {
+  color: $color-text-support;
+}
+
+/// Will set color $color-text-disabled on text. Used only to indicate disabled text
+///
+/// @name bb-text-disabled
+///
+/// @example html
+///   <p class="bb-text-disabled">Text with disabled color</p>
+
+.bb-text-disabled {
+  color: $color-text-disabled;
+}
+
+/// Will set color $color-text-danger on text.
+///
+/// @name bb-text-danger
+///
+/// @example html
+///   <p class="bb-text-danger">Text with danger color</p>
+
+.bb-text-danger {
+  color: $color-text-danger;
+}
+
+/// Will add $highlight-background-color as the background-color on an element, as well as padding
+///
+/// @name bb-text-highlighted
+///
+/// @example html
+/// <span class="bb-text-highlighted"> BG color and padding </span>
+
+.bb-text-highlighted {
+  background-color: $highlight-background-color;
+  outline: $highlight-background-color solid $sizer-xs;
+}

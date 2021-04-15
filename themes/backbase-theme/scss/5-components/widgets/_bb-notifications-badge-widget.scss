@@ -1,0 +1,127 @@
+$notification-badge-counter-top: 0 !default;
+$notification-badge-counter-left: 52% !default;
+$notification-badge-widget-dropdown-menu-width: 23.5rem !default;
+$notifications-badge-widget-list-max-height: calc(60vh - 6.25rem) !default;
+$notifications-badge-widget-list-min-height: 13rem !default;
+$notifications-badge-list-item-unread-mark-size: $sizer-sm !default;
+$notifications-badge-list-item-unread-mark-color: $color-primary !default;
+$notifications-badge-list-item-unread-mark-top: 50% !default;
+$border-radius-circle: 50% !default;
+$notifications-badge-list-mobile-top-padding: $spacer-lg !default;
+$notifications-badge-list-mobile-max-width: 23.5rem !default;
+$notifications-badge-list-mobile-max-height: 52.0625rem !default;
+$notifications-badge-list-mobile-container-height: calc(60vh - 2rem) !default;
+$notifications-badge-dropdown-menu-mobile-container-width: 100vw !default;
+$notifications-badge-dropdown-menu-list-padding-mobile: 0 0.75rem !default;
+
+.bb-notifications-badge-widget__dropdown-button {
+  position: relative;
+}
+
+.bb-notifications-badge-widget__dropdown-button-counter {
+  position: absolute;
+  top: $notification-badge-counter-top;
+  left: $notification-badge-counter-left;
+}
+
+.bb-notifications-badge-widget__dropdown-menu {
+  width: $notification-badge-widget-dropdown-menu-width;
+  margin-top: $notifications-badge-list-mobile-top-padding;
+
+  @include media-breakpoint-down(sm) {
+    width: $notifications-badge-dropdown-menu-mobile-container-width;
+    max-width: $notifications-badge-list-mobile-max-width;
+  }
+}
+
+.bb-notifications-badge-widget__dropdown-menu-list {
+  @include media-breakpoint-down(sm) {
+    padding: $notifications-badge-dropdown-menu-list-padding-mobile;
+  }
+}
+
+.bb-notifications-badge-widget__load-new-button {
+  padding: $sizer-md $sizer-lg $sizer-md $sizer-md;
+  font-size: $font-size-sm;
+  border-radius: 0;
+
+  @include media-breakpoint-down(sm) {
+    padding: $spacer-md;
+  }
+}
+
+.bb-notifications-badge-widget__alert {
+  .alert {
+    border-radius: 0;
+  }
+}
+
+.bb-notifications-badge-widget__all-read-button {
+  padding: $spacer-sm $spacer-lg;
+}
+
+.bb-notifications-badge-widget__back-button {
+  margin-bottom: $spacer-md;
+  padding-top: $spacer-sm;
+  padding-bottom: $spacer-sm;
+}
+
+.bb-notifications-badge-widget__list-wrapper {
+  @include media-breakpoint-down(sm) {
+    max-height: $notifications-badge-list-mobile-max-height;
+  }
+}
+
+.bb-notifications-badge-widget__list {
+  min-height: $notifications-badge-widget-list-min-height;
+  max-height: $notifications-badge-widget-list-max-height;
+  overflow-y: auto;
+
+  @include media-breakpoint-down(sm) {
+    height: $notifications-badge-list-mobile-container-height;
+  }
+}
+
+.bb-notifications-badge-list-item {
+  @include media-breakpoint-down(sm) {
+    padding-right: $spacer-md;
+    padding-left: $spacer-md;
+  }
+}
+
+.bb-notifications-badge-list-item--unread {
+  .bb-notifications-badge-list-item__header {
+    position: relative;
+    padding-right: $sizer-lg;
+    &::after {
+      position: absolute;
+      top: $notifications-badge-list-item-unread-mark-top;
+      right: 0;
+      display: block;
+      width: $notifications-badge-list-item-unread-mark-size;
+      height: $notifications-badge-list-item-unread-mark-size;
+      margin-top: -$notifications-badge-list-item-unread-mark-size/2;
+      background: $notifications-badge-list-item-unread-mark-color;
+      border-radius: $border-radius-circle;
+      content: "";
+    }
+  }
+
+  .bb-notifications-badge-list-item__title,
+  .bb-notifications-badge-list-item__content {
+    font-weight: $font-weight-bold;
+  }
+}
+
+.bb-notifications-badge-list-item__title {
+  // fix broken truncating/line-clamp inside flex structure due to lose of width
+  width: 100%;
+  min-width: 0;
+  font-weight: normal;
+}
+
+.bb-notifications-badge-list-item__body {
+  // fix broken truncating/line-clamp inside flex structure due to lose of width
+  width: 100%;
+  min-width: 0;
+}

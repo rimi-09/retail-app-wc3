@@ -1,0 +1,75 @@
+/// Configures the padding for font-icons
+// $font-icon-btn-padding:
+
+/// Configures the scale for Small icons
+// $icon-scale-sm:
+
+/// Configures the scale for Large icons
+// $icon-scale-lg:
+
+/// Configures the scale for Extra Large icons
+// $icon-scale-xl:
+
+/// Configures the scale for Extra Extra Large icons
+// $icon-scale-xxl:
+
+/// Configures the scale for Small round icons
+// $icon-scale-circle-sm:
+
+/// Configures the scale for Medium  round icons
+// $icon-scale-circle-md:
+
+/// Configures the contrasting icon color for icons with a background-color
+// $icon-contrast-color:
+
+/// Configures the border-radius for square icons, has some roundness by default
+// $icon-square-border-radius:
+
+/// Configures the default icon size
+// $font-icon-size:
+
+/// Configures the icon background size
+// $font-icon-background-size:
+
+/// Configures the toggle for outlining icons. Defaults to true
+/// When false, it will use the original icon-map definitions
+// $enable-outlined-icons:
+
+.mic_start {
+	content: url(#{$path-images}/mic_start.png);
+}
+.bot_icon_conversation {
+	content: url(#{$path-images}/bot_icon_conversation.png);
+}
+.play_conversation {
+	content: url(#{$path-images}/play_conversation.png);
+}
+.user_icon {
+	content: url(#{$path-images}/user_icon.png);
+}
+.bot_icon {
+	content: url(#{$path-images}/bot_icon.png);
+}
+.login-banner {
+	content: url(#{$path-images}/login-banner@2x.png);
+	width: 100%;
+}
+.xe-logo {
+	content: url(#{$path-images}/xe_logo.svg);
+	width: 40%;
+}
+.email_icon {
+	content: url(#{$path-images}/email.svg);
+}
+.pwd_icon {
+	content: url(#{$path-images}/password.svg);
+}
+.visa_icon {
+	content: url(#{$path-images}/visa.svg);
+}
+.mastercard_icon {
+	content: url(#{$path-images}/mastercard.svg);
+}
+.maetrocard {
+	content: url(#{$path-images}/maestro.svg);
+}

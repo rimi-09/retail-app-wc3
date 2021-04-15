@@ -1,0 +1,39 @@
+<div [ngSwitch]="msg.sendBy" class="chat-msg">
+  <div *ngSwitchCase="'bot'" class="msg bot-msg" [class.show]="isVisible">
+    <mat-card class="card bot" *ngIf="!msg.loginRequired">
+      <mat-card class="icon">
+        <img class="bot-icon bot_icon_conversation"/>
+      </mat-card>
+      <mat-card-content class="botcontent">
+        {{msg.text}}
+      </mat-card-content>
+      <mat-card class="icon voicebutton">
+        <img (click)="start()"  class="bot-icon play_conversation"/>
+        <!-- <i class="material-icons"  style="color: papayawhip; font-size: 12px;">pause</i> -->
+      </mat-card>
+     </mat-card>
+
+     <mat-card class="card bot" *ngIf="msg.loginRequired">
+      <mat-card class="icon">
+        <img class="bot-icon bot_icon_conversation"/>
+      </mat-card>
+      <mat-card-content class="botcontenterrormsg errormsg">
+        Login requires for this operation.
+      </mat-card-content>
+      <!-- <mat-card class="icon voicebutton">
+      </mat-card> -->
+     </mat-card>
+  </div>
+  
+  <div *ngSwitchCase="'user'" class="msg user-msg" [class.show]="isVisible">
+    <mat-card class="card user">
+      <mat-card class="icon user-icon-coversation">
+        <img class="user-icon user_icon"/>
+      </mat-card>  
+      <mat-card-content class="botcontent">
+        {{msg.text}}
+      </mat-card-content>    
+    </mat-card>   
+  </div>
+    
+</div>

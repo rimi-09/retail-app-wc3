@@ -1,0 +1,19 @@
+// Global annotations
+////
+/// @group structure
+/// @access private
+////
+
+// Local
+$tabs-container-tabs-margin: $spacer-xl !default;
+
+// tab-container-ang
+.bb-tabs-container {
+}
+
+.bb-tabs-container__tabs {
+  margin-bottom: $tabs-container-tabs-margin;
+}
+
+.bb-tabs-container__content {
+}

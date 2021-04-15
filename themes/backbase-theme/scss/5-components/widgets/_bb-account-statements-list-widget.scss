@@ -1,0 +1,24 @@
+// Global annotations
+////
+/// @group widgets
+/// @access private
+////
+
+$account-statements-filter-form-container-bg-color: $color-neutral-lightest !default;
+
+.account-statements-filter__form-container {
+  margin-top: $spacer-xl;
+  background-color: $account-statements-filter-form-container-bg-color;
+  border-top: $border-width $border-style $border-color;
+  border-bottom: $border-width $border-style $border-color;
+}
+
+.account-statements-filter__date-field-wrapper {
+  @include media-breakpoint-up(sm) {
+    max-width: 320px;
+  }
+}
+
+.account-statements-filter__validation-message {
+  position: absolute;
+}

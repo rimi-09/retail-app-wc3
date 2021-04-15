@@ -1,0 +1,22 @@
+// Global annotations
+////
+/// @group widgets
+/// @access private
+////
+$bb-portfolio-summary-legend-marker-size: 0.625rem !default;
+$bb-portfolio-summary-legend-marker-border-radius: 0.125rem !default;
+$bb-portfolio-summary-allocations-progressbar-negative-bg-color: $color-danger !default;
+
+.bb-portfolio-summary-legend__marker {
+  width: $bb-portfolio-summary-legend-marker-size;
+  height: $bb-portfolio-summary-legend-marker-size;
+  border-radius: $bb-portfolio-summary-legend-marker-border-radius;
+}
+
+.bb-portfolio-summary-progressbar--negative {
+  justify-content: flex-end;
+
+  .progress-bar {
+    background-color: $bb-portfolio-summary-allocations-progressbar-negative-bg-color;
+  }
+}

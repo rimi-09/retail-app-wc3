@@ -1,0 +1,102 @@
+// Global annotations
+////
+/// @group forms
+/// @access private
+////
+
+// stylelint-disable selector-no-qualifying-type
+$bb-dropdown-icon-btn-padding-x-sm: $sizer-sm !default;
+$bb-dropdown-icon-btn-padding-x-md: $sizer-md !default;
+$bb-dropdown-icon-divider-margin-x-sm: $spacer-xs !default;
+
+.bb-dropdown-btn-group-wrapper {
+  &.show {
+    > .btn-primary:not(:disabled):not(.disabled):focus {
+      background-color: $color-primary-darkest;
+      border-color: $color-primary-darkest;
+    }
+
+    > .btn-secondary:not(:disabled):not(.disabled):focus {
+      background-color: $color-primary-darker;
+      border-color: $color-primary-darker;
+    }
+  }
+
+  .bb-icon,
+  .bicon {
+    margin-left: $bb-dropdown-icon-divider-margin-x-sm;
+  }
+
+  .btn.btn-circle {
+    .bb-icon,
+    .bicon {
+      margin-left: 0;
+    }
+  }
+
+  bb-dropdown-menu-ui.btn-group[icon] & {
+    .bb-icon,
+    .bicon {
+      margin-left: 0;
+    }
+
+    .btn-sm {
+      padding-right: $bb-dropdown-icon-btn-padding-x-sm;
+      padding-left: $bb-dropdown-icon-btn-padding-x-sm;
+    }
+
+    .btn-md {
+      padding-right: $bb-dropdown-icon-btn-padding-x-md;
+      padding-left: $bb-dropdown-icon-btn-padding-x-md;
+    }
+  }
+
+  .btn-group > .btn-group:not(:last-child) > & {
+    > .btn {
+      @include border-right-radius(0);
+    }
+  }
+
+  .btn-group > .btn-group:not(:first-child) > & {
+    > .btn {
+      @include border-left-radius(0);
+    }
+  }
+
+  // dropdown part of a group
+  .btn-group:not(bb-dropdown-menu-ui) & {
+    position: relative;
+    display: inline-flex;
+    vertical-align: middle;
+
+    // set buttons
+    > .btn {
+      position: relative;
+      flex: 0 1 auto;
+
+      &:focus,
+      &:active,
+      &.active,
+      &:hover {
+        z-index: 1;
+      }
+    }
+  }
+}
+
+.dropdown-menu-toggle-button__content {
+  display: flex;
+  align-items: center;
+}
+
+.dropdown-menu-toggle-button__content--full-width {
+  width: 100%;
+}
+
+.dropdown-menu__label {
+  padding: $sizer-xs;
+}
+
+.dropdown-menu__label--full-width {
+  margin-right: auto;
+}

@@ -1,0 +1,9 @@
+<div class="chat-input">
+  <mat-form-field class="full-width">
+    
+    <input class="query" #input matInput placeholder="{{myplaceHolder}}" (focus)="checkPlaceHolder()" (blur)="checkPlaceHolder()">
+    <img class="micbutton mic_start" *ngIf= "!recorderButtonShowHide" (click)="startService()">
+      <i class="material-icons" class="micbutton" *ngIf = "recorderButtonShowHide" (click)="stopService()"> mic_off</i>
+      <div class="querysendbutton" *ngIf="querysendButtonShowHide">Send</div>
+  </mat-form-field>
+</div>

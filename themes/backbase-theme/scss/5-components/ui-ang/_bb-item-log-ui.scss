@@ -1,0 +1,90 @@
+// Global annotations
+////
+/// @group ui-components
+/// @access private
+////
+
+$item-log-icon-top-spacer: 0.125 * $spacer !default;
+$item-log-icon-size: 1.5 * $sizer !default;
+$item-log-border-width: 2px !default;
+$item-log-row-height: calc(
+  100% - (#{$item-log-icon-size} - 2 * #{$item-log-icon-top-spacer}) - #{$item-log-border-width}
+) !default;
+$item-log-item-left-position: calc(
+  (#{$item-log-icon-size} / 2) - #{$item-log-border-width / 2}
+) !default;
+$item-log-item-top-position: calc(
+  (#{$item-log-icon-size} - #{$item-log-icon-top-spacer}) + #{$item-log-border-width / 2}
+) !default;
+$item-log-item-border: $item-log-border-width solid $color-neutral-greyer !default;
+$item-log-pending-item-border: $item-log-border-width dashed $color-neutral-greyer !default;
+$item-log-time-color: $color-text-support !default;
+
+/// Show a list of approval items.
+///
+/// @name bb-item-log
+///
+/// @example html - approval item log
+///   <div class="bb-item-log">
+///     <div class="bb-item-log__pending-record">
+///       <div class="bb-icon bb-icon--secondary bb-icon-watch-later bb-icon--sm bb-item-log-record__icon"></div>
+///       <div class="bb-item-log__pending-record--details">
+///         Waiting for further approval(s)
+///       </div>
+///     </div>
+///     <div class="bb-item-log__record">
+///       <div class="bb-icon bb-icon--sm bb-icon-cancel bb-icon--danger bb-item-log-record__icon"></div>
+///       <div class="bb-item-log-record__details">
+///         <span class="bb-text-bold">Approved</span>
+///         by John Doe
+///         <div>Jan 22, 2018 at 2:44 PM</div>
+///       </div>
+///     </div>
+///   </div>
+
+.bb-item-log__record,
+.item-log__record {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  padding-bottom: $sizer;
+
+  &::before {
+    position: absolute;
+    top: $item-log-item-top-position;
+    left: $item-log-item-left-position;
+    display: inline-block;
+    height: $item-log-row-height;
+    border-left: $item-log-item-border;
+    content: "";
+  }
+
+  &:last-child {
+    padding-bottom: 0;
+
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.bb-item-log-record__time,
+.item-log-record__time {
+  color: $item-log-time-color;
+}
+
+.bb-item-log-record__icon,
+.item-log-record__icon {
+  z-index: 1;
+  margin-top: $item-log-icon-top-spacer;
+  margin-right: $spacer-sm;
+}
+
+.bb-item-log__pending-record,
+.item-log__pending-record {
+  @extend .item-log__record;
+
+  &::before {
+    border-left: $item-log-pending-item-border;
+  }
+}

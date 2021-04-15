@@ -1,0 +1,85 @@
+// Global annotations
+////
+/// @group navigation
+/// @access private
+////
+
+$nav-tabs-inverse-link-color: $color-neutral-white !default;
+$nav-tabs-inverse-link-focus-color: $color-neutral-greyer !default;
+$nav-tabs-inverse-link-hover-color: $color-neutral-white !default;
+$nav-tabs-inverse-link-active-color: $color-neutral-white !default;
+$nav-tabs-inverse-link-hover-bg: transparent !default;
+$nav-tabs-inverse-link-hover-border-color: $color-neutral-greyer !default;
+$nav-tabs-inverse-link-active-border-color: $color-neutral-white !default;
+
+$nav-tabs-default-link-color: $color-neutral-black !default;
+$nav-tabs-default-link-focus-color: rgba($color-info, 0.2) !default;
+$nav-tabs-default-link-hover-color: $color-neutral-black !default;
+$nav-tabs-default-link-active-color: $color-info !default;
+$nav-tabs-default-link-hover-bg: $color-neutral-lightest !default;
+$nav-tabs-default-link-hover-border-color: $color-neutral-greyer !default;
+$nav-tabs-default-link-active-border-color: $color-info !default;
+
+.bb-tab--inverse {
+  .nav-tabs {
+    .nav-link {
+      color: $nav-tabs-inverse-link-color;
+
+      &:focus {
+        box-shadow: 0 0 0 $nav-tabs-link-focus-width $nav-tabs-inverse-link-focus-color;
+      }
+
+      &:hover {
+        color: $nav-tabs-inverse-link-hover-color;
+        background-color: $nav-tabs-inverse-link-hover-bg;
+
+        &:after {
+          background-color: $nav-tabs-inverse-link-hover-border-color;
+        }
+      }
+    }
+
+    .nav-link.active {
+      color: $nav-tabs-inverse-link-active-color;
+      &:after {
+        background-color: $nav-tabs-inverse-link-active-border-color;
+      }
+
+      &:hover {
+        background-color: $nav-tabs-inverse-link-hover-bg;
+      }
+    }
+  }
+}
+
+.bb-tab--default {
+  .nav-tabs {
+    .nav-link {
+      color: $nav-tabs-default-link-color;
+
+      &:focus {
+        box-shadow: 0 0 0 $nav-tabs-link-focus-width $nav-tabs-default-link-focus-color;
+      }
+
+      &:hover {
+        color: $nav-tabs-default-link-hover-color;
+        background-color: $nav-tabs-default-link-hover-bg;
+
+        &:after {
+          background-color: $nav-tabs-default-link-hover-border-color;
+        }
+      }
+    }
+
+    .nav-link.active {
+      color: $nav-tabs-default-link-active-color;
+      &:after {
+        background-color: $nav-tabs-default-link-active-border-color;
+      }
+
+      &:hover {
+        background-color: $nav-tabs-default-link-hover-bg;
+      }
+    }
+  }
+}

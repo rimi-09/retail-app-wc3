@@ -1,0 +1,101 @@
+// Global annotations
+////
+/// @group forms
+/// @access private
+////
+
+// Added: @1.47.0 => @1.48.0
+$dropdown-multi-select-placeholder-color: $color-text-support !default;
+$dropdown-multi-select-disabled-toggle: $text-muted !default;
+$dropdown-multi-select-disabled-toggle-bg: $color-neutral-lighter !default;
+$dropdown-multi-select-clear-button-color: $color-primary !default;
+$dropdown-multi-select-clear-button-font-weight: $font-weight-bold !default;
+
+$dropdown-multi-select-option-checkbox-dimensions: 1.5rem !default;
+$input-multi-select-option-checkbox-checkbox-border-radius: $border-radius-xs !default;
+$input-multi-select-option-checkbox-bg: $input-bg !default;
+$input-multi-select-option-checkbox-border-color: $input-border-color !default;
+$input-multi-select-option-checkbox-checked-bg: $color-info !default;
+$input-multi-select-option-checkbox-checked-border-color: $color-info !default;
+$input-multi-select-option-checkbox-checked-color: $color-neutral-white !default;
+
+.bb-dropdown-multi-select__result {
+  width: calc(100% - #{$font-icon-size});
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.bb-dropdown-multi-select__options-list {
+  max-height: $pre-scrollable-max-height;
+  margin-bottom: $spacer-sm;
+  overflow-y: auto;
+
+  .dropdown-item {
+    padding: 0;
+  }
+
+  .bb-input-checkbox {
+    width: 100%;
+    padding: $sizer-sm $sizer-md;
+  }
+
+  .dropdown-option {
+    width: auto;
+    margin: 0 $spacer-md;
+    padding: $spacer-xs;
+
+    &::before {
+      display: inline-block;
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: 0 $spacer-sm 0 0;
+      padding-left: 1px;
+      color: $input-multi-select-option-checkbox-checked-color;
+      font-size: 1.3rem;
+      font-family: "Material Icons Outlined";
+      line-height: 1.2;
+      vertical-align: bottom;
+      background-color: $input-multi-select-option-checkbox-bg;
+      border: 1px solid $input-multi-select-option-checkbox-border-color;
+      border-radius: 0.25rem;
+      cursor: pointer;
+      content: "";
+    }
+  }
+
+  .dropdown-option--selected {
+    &::before {
+      background-color: $input-multi-select-option-checkbox-checked-border-color;
+      border-color: $input-multi-select-option-checkbox-checked-border-color;
+      content: "checked";
+    }
+  }
+
+  .dropdown-option__input {
+    display: none;
+  }
+}
+
+.bb-dropdown-multi-select--disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+
+  .bb-dropdown-multi-select__toggle {
+    color: $dropdown-multi-select-disabled-toggle;
+    background-color: $dropdown-multi-select-disabled-toggle-bg;
+    cursor: not-allowed;
+  }
+}
+
+.bb-dropdown-multi-select__clear-button {
+  margin-top: $spacer-sm;
+  margin-left: $spacer-md;
+  padding: $sizer-xs;
+  color: $dropdown-multi-select-clear-button-color;
+  font-weight: $dropdown-multi-select-clear-button-font-weight;
+
+  &:hover {
+    color: $dropdown-multi-select-clear-button-color;
+  }
+}

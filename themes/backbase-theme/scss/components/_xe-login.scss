@@ -1,0 +1,79 @@
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #760F62 !important;
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #760F62 !important;
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #760F62 !important;
+  }
+  .card-body-xe {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    background: transparent linear-gradient(162deg, #FFFFFF 0%, #E1D5ED 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+    width: 45%;
+    min-width: 500px;
+    margin : 0 !important;
+    padding: 100px !important;
+  }
+  .btn-primary-xe {
+    width: 100%;
+    background: transparent linear-gradient(117deg, #942494 0%, #522E73 100%) 0% 0% no-repeat padding-box;
+    color: white !important;
+    font-weight: 600;
+  }
+  .form-control-login {
+    padding: 0.5rem 2.5rem;
+  }
+  .form-control {
+    color: #760F62 !important;
+    font-family: "Helvetica Neue" , "Regular";
+  }
+  .login-input-icon {
+    width: 20px;
+    margin-top: 12px;
+    margin-left: 10px;
+    position: absolute;
+  }
+  .login-input-group {
+    margin-bottom: 15px;
+  }
+  .btn-secondary-xe {
+    background-color: #F5F1F9;
+    color: #988B9F;
+    border-radius: 10px;
+    width: 40%;
+    font-size: 12px;
+    border: none;
+    font-weight: lighter;
+  }
+  .btn-secondary-xe:hover {
+    color: #988B9F !important;
+    text-decoration: none !important;
+}
+  .btn-secondary-other {
+    float: right;
+  }
+  .btn-group-xe {
+    margin-bottom: 30px;
+  }
+  .register-xe {
+    width: 30%;
+    float: right;
+    margin-top: -40px;
+    margin-right: -5px;
+    font-size: 12px;
+    color: #988B9F;
+    text-align: right;
+  }
+  .link-xe {
+    color: #261236 !important;
+    font-weight: 600;
+    cursor:pointer;
+  }

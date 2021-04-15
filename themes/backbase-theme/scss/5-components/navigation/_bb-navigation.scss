@@ -1,0 +1,148 @@
+// Global annotations
+////
+/// @group navigation
+/// @access private
+////
+
+$navigation-width: 15rem !default;
+$navigation-separator-width: $border-width !default;
+$navigation-separator-color: $color-neutral-grey !default;
+$navigation-item-color: $color-neutral-black !default;
+$navigation-item-background-color: transparent !default;
+$navigation-item-link-hover-color: $color-primary !default;
+$navigation-item-hover-background-color: $color-neutral-light !default; // TODO: should be lighter, but page background isn't white - design needs to look at this
+$navigation-item-active-color: $color-primary-darkest !default;
+$navigation-item-active-background-color: $color-primary-lightest !default;
+$navigation-collapsed-width: 3.5rem !default;
+
+// Styles for navigation-spa-widget-ang and navigation-link-widget-ang
+.bb-navigation {
+  min-width: $navigation-width;
+  padding-left: 0;
+  list-style: none;
+  //transition: width 200ms 0ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.bb-navigation__header {
+  padding: $sizer-sm $sizer-md;
+  color: $navigation-header-color;
+  font-weight: $font-weight-semi-bold;
+  font-size: $font-size-subheader;
+  text-transform: uppercase;
+
+  .bb-navigation__item + & {
+    margin-top: $sizer-md;
+  }
+}
+
+.bb-navigation__separator {
+  height: 0;
+  margin: $spacer-md $spacer-sm;
+  background-color: $navigation-separator-color;
+}
+
+@mixin bb-navigation--collapsed() {
+  .bb-navigation {
+    min-width: $navigation-collapsed-width;
+    max-width: $navigation-collapsed-width;
+  }
+
+  .bb-navigation__header {
+    @include sr-only;
+  }
+
+  .bb-navigation__separator {
+    height: $navigation-separator-width;
+  }
+}
+
+// bb-navigation-item.scss
+
+.bb-navigation-item {
+  display: flex;
+  align-items: center;
+}
+
+.bb-navigation-item__link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: $sizer-sm $sizer-md;
+  color: $navigation-item-color;
+  line-height: 1.25rem;
+  background-color: $navigation-item-background-color;
+  @include border-radius($navigation-item-border-radius);
+
+  &:hover {
+    color: initial;
+    text-decoration: none;
+    background-color: $navigation-item-hover-background-color;
+  }
+}
+
+.bb-navigation--link {
+  .bb-navigation-item__link:hover {
+    color: $navigation-item-link-hover-color;
+    background-color: initial;
+  }
+}
+
+.bb-navigation__item:not(:last-of-type) {
+  margin-bottom: $sizer-xs;
+}
+
+.bb-navigation-item__icon {
+  width: $sizer-lg;
+  margin-right: $spacer-sm;
+}
+
+.bb-navigation-item__title {
+  word-break: break-all; // Fallback; IE does not support break-word
+  word-break: break-word;
+}
+
+.bb-navigation-item__badge {
+  margin-left: $spacer-sm;
+}
+
+.bb-navigation--link .bb-navigation-item--active {
+  .bb-navigation-item__link {
+    color: initial;
+    background-color: initial;
+  }
+
+  .bb-navigation-item__icon {
+    color: initial;
+  }
+}
+
+.bb-navigation-item--active {
+  .bb-navigation-item__link {
+    color: $navigation-item-active-color;
+    background-color: $navigation-item-active-background-color;
+  }
+
+  .bb-navigation-item__icon {
+    color: $navigation-item-active-color;
+  }
+}
+
+@mixin bb-navigation-item--collapsed() {
+  .bb-navigation-item {
+    position: relative;
+  }
+
+  .bb-navigation-item__icon {
+    margin-right: unset;
+  }
+
+  .bb-navigation__header-title,
+  .bb-navigation-item__title {
+    @include sr-only;
+  }
+
+  .bb-navigation-item__badge {
+    position: absolute;
+    transform: translate(55%, -40%);
+  }
+}

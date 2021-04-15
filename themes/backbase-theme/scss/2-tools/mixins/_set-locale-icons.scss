@@ -1,0 +1,16 @@
+// Global annotations
+////
+/// @group mixins
+/// @access private
+////
+
+// Set Locale Flag Icon class generation
+@mixin flag-icon($country) {
+  .flag-icon-#{$country} {
+    background-image: url(#{$path-flag-icon-rect}/#{$country}.svg);
+
+    &.flag-icon-squared {
+      background-image: url(#{$path-flag-icon-square}/#{$country}.svg);
+    }
+  }
+}

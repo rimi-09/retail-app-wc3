@@ -1,0 +1,96 @@
+// Global annotations
+////
+/// @group universal-collection
+/// @access private
+////
+
+$heading-widget-background-image: url(#{$path-bb-images}/heading-widget-ang/heading-widget-image.svg),
+  linear-gradient(45deg, rgb(27, 115, 232) 0%, rgb(50, 197, 255) 100%) !default;
+$heading-widget-background-image-heading-color: $color-neutral-white !default;
+$heading-widget-font-size: $font-size-h1 !default;
+$heading-widget-padding-top: 5rem !default; // intentional non-standard sizing; not using $sizer
+$heading-widget-padding-bottom: $spacer-xl !default;
+$heading-widget-padding-x: $spacer-xl !default;
+$heading-widget-padding-x-sm: $spacer-lg !default;
+$heading-widget-de-elevated-padding-bottom: 14rem !default;
+$heading-widget-de-elevated-sizer-horizontal: $sizer-sm !default;
+$heading-widget-border-radius: $border-radius-md !default;
+$heading-widget--buton-above-padding-top: $spacer-xl !default;
+
+.bb-heading-widget {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: $heading-widget-padding-top $heading-widget-padding-x $heading-widget-padding-bottom;
+  @include border-radius($heading-widget-border-radius);
+
+  @include media-breakpoint-down(sm) {
+    padding-right: $heading-widget-padding-x-sm;
+    padding-left: $heading-widget-padding-x-sm;
+    @include border-radius(0);
+  }
+
+  @include media-breakpoint-down(xs) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.bb-heading-widget__heading {
+  color: $heading-widget-color;
+}
+
+.bb-heading-widget--de-elevated {
+  padding-bottom: $heading-widget-de-elevated-padding-bottom;
+  background-image: $heading-widget-background;
+
+  @include media-breakpoint-down(sm) {
+    margin-right: -#{$heading-widget-de-elevated-sizer-horizontal};
+    margin-left: -#{$heading-widget-de-elevated-sizer-horizontal};
+  }
+}
+
+.bb-heading-widget--image {
+  background-image: $heading-widget-background-image;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+
+  .bb-heading-widget__heading {
+    color: $heading-widget-background-image-heading-color;
+  }
+
+  @include media-breakpoint-down(sm) {
+    background-size: cover;
+  }
+}
+
+.bb-heading-widget__button {
+  //for row layout
+  @include media-breakpoint-up(sm) {
+    margin-left: $spacer-md;
+  }
+
+  //for column layout
+  @include media-breakpoint-down(xs) {
+    width: 100%;
+    margin-top: $spacer-sm;
+  }
+}
+
+.bb-heading-widget--button-above {
+  flex-direction: column-reverse;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding-top: $heading-widget--buton-above-padding-top;
+
+  .bb-heading-widget__button {
+    margin-left: 0;
+
+    // button above title should be aligned on the left side in smaller screen resolutions
+    @include media-breakpoint-down(xs) {
+      justify-content: flex-start;
+      margin-top: 0;
+    }
+  }
+}

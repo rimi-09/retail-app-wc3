@@ -1,0 +1,21 @@
+$authorized-users-disclaimer-padding: $sizer !default;
+$authorized-users-highlight-color: $primary !default;
+
+.bb-authorized-users-permission-card {
+  cursor: pointer;
+}
+
+.bb-authorized-users-permission-card--selected {
+  border: 2px solid $authorized-users-highlight-color;
+}
+
+.bb-authorized-users-permission-card__disclaimer {
+  padding-top: $authorized-users-disclaimer-padding;
+  color: $authorized-users-highlight-color;
+  text-align: center;
+}
+
+.bb-authorized-users-stepper {
+  display: flex;
+  justify-content: space-around;
+}
